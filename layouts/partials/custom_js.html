@@ -1,8 +1,89 @@
+<style>
+.button-cursor {
+    cursor: pointer;
+}
+</style>
 <script>
 console.log('TEST!!!!');
+
+var modes = ['orig', 'blobpic', 'blob', 'pokemon', 'kirby', 'sunshine'];
+var current_mode_index = 0;
+var current_mode_image_index = 0;
+
+var mode_images = {
+    'blobpic' : [
+        'blobpic_1.png',
+        'blobpic_2.png',
+        'blobpic_3.png'
+    ],
+    'blob' : [
+        'blob_blue.png',
+        'blob_pink.png',
+        'blob_pattern1.png',
+        'blob_orange.png',
+        'blob_pattern2.png',
+        'blob_line.png',
+    ],
+    'pokemon' : [
+        'pikachu.jpg',
+        'breloom.jpg',
+        'gyarados.jpg',
+    ],
+    'kirby' : [
+        'kirby_ice.png',
+        'kirby_fire.png',
+        'kirby_tornado.png',
+        'kirby_sword.png'
+    ],
+    'sunshine' : [
+        'sunshine_squirt.jpg',
+        'sunshine_hover.jpg',
+        'sunshine_turbo.jpg'
+    ],
+    'orig' : []
+}
+
+get_mode = () => {
+    return modes[current_mode_index];
+};
+get_image = () => {
+    return mode_images[get_mode()][current_mode_image_index];
+};
+
 var x = document.getElementsByClassName("avatar");
 var y = x[0];
-y.addEventListener("mouseover", function(){
-    console.log('OVER!!!');
+var orig_src = y.src;
+y.classList.add('button-cursor');
+
+update_image = async () => {
+    console.log('MODE: ', get_mode());
+    console.log('IMAGE: ', get_image());
+
+    if (get_mode() == 'orig') {
+        y.classList.add('avatar-circle');
+        y.style.objectFit = 'cover';
+        y.src = orig_src;
+    }
+    else {
+        y.src = 'img/' + get_image();
+        if (get_mode() == 'blob') {
+            y.classList.remove('avatar-circle');
+            y.style.objectFit = 'contain';
+        }
+    }
+}
+
+y.addEventListener("mouseover", async function(){
+    current_mode_image_index += 1;
+    current_mode_image_index %= mode_images[modes[current_mode_index]].length;
+
+    await update_image();
+});
+y.addEventListener("mouseup", async function(){
+    current_mode_image_index = 0;
+    current_mode_index += 1;
+    current_mode_index %= modes.length;
+
+    await update_image();
 });
 </script>

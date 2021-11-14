@@ -6,7 +6,7 @@ title: Cooper Raterink
 superuser: true
 
 # Role/position/tagline
-role: Responsible AI Researcher
+role: AI Safety Research + Engineering
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -43,6 +43,9 @@ social:
 - icon: linkedin
   icon_pack: fab
   link: https://www.linkedin.com/in/cooper-raterink-7a0a20a4/ 
+- icon: envelope
+  icon_pack: far
+  link: mailto:cooper.raterink@gmail.com
 
 # Link to a PDF of your resume/CV.
 # To use: copy your resume to `static/uploads/resume.pdf`, enable `ai` icons in `params.toml`, 
@@ -58,6 +61,8 @@ email: ""
 highlight_name: false
 ---
 
-Cooper Raterink researches large language model safety and responsibility at Cohere, a Toronto-based start-up. Herecently graduated from the MSc program at Stanford University, where he studied human-centered artificial intelligence and analyzed misinformation with Stanford Internet Observatory and the Election Integrity Partnership.
+I research large language model safety at [Cohere](https://cohere.ai/), a Toronto-based startup building a developer-focused NLP platform. (We're hiring! Shoot me an email at cooper at cohere dot ai and say hi 🙂.) I recently graduated from the MSc [computer science](https://cs.stanford.edu/research) program at Stanford University, where I studied human-centered artificial intelligence and analyzed misinformation with the [Stanford Internet Observatory](https://cyber.fsi.stanford.edu/io/io) as part of the [Election Integrity Partnership](https://www.eipartnership.net/).
 
-His research interests include [TODO]
+My research and writing is generally at the intersection of technology and society. Current interests include AI safety, fairness, and ethics; the effects of AI on the online information ecosystem and influence operations; contrastive learning for natural language understanding; and safety and performance evaluation of large language generation models.
+
+Outside of work and research, you can usually find me near the water 🌊🌊🌊
